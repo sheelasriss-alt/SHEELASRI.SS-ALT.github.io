@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Astra Scholar Institute</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@400;500;600&display=swap');
+
+        :root {
+            --dark-green: #384d38;
+            --light-beige: #e3e0d8;
+            --off-white: #f5f5f5;
+            --text-dark: #2c2c2c;
+            --button-bg: #222222;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--text-dark);
+            background-color: var(--off-white);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* --- Header --- */
+        .header {
+            background-color: var(--off-white);
+            padding: 15px 0;
+            border-bottom: 1px solid #ddd;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 24px;
+            font-weight: 600;
+        }
+
+        .logo-img {
+            height: 30px;
+            margin-right: 10px;
+            content: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23384d38"><path d="M12 2L2 22h20zM12 5.86L4.72 20h14.56z"/></svg>');
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-dark);
+            margin: 0 15px;
+            font-weight: 500;
+            font-size: 14px;
+            transition: color 0.3s;
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-links a:hover {
+            color: var(--dark-green);
+        }
+        
+        .nav-links a.active {
+            font-weight: 600;
+            color: var(--dark-green);
+        }
+
+        .nav-links .icon {
+            height: 16px;
+            margin-right: 5px;
+            opacity: 0.7;
+        }
+
+        .nav-button {
+            background-color: var(--button-bg);
+            color: var(--off-white);
+            padding: 10px 20px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 14px;
+            transition: background-color 0.3s;
+        }
+
+        .nav-button:hover {
+            background-color: #000;
+        }
+        
+        .menu-toggle {
+            display: none;
+            cursor: pointer;
+            font-size: 24px;
+        }
+
+        /* --- Page Sections --- */
+        .content-section {
+            display: none;
+            padding-bottom: 80px;
+        }
+        
+        .content-section.active {
+            display: block;
+        }
+
+        .hero {
+            background-color: var(--dark-green);
+            color: var(--light-beige);
+            text-align: center;
+            padding: 100px 20px;
+        }
+
+        .hero h1 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 48px;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 18px;
+            max-width: 600px;
+            margin: 0 auto 30px;
+        }
+
+        .hero-button {
+            background-color: transparent;
+            border: 2px solid var(--light-beige);
+            color: var(--light-beige);
+            padding: 15px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .hero-button:hover {
+            background-color: var(--light-beige);
+            color: var(--dark-green);
+        }
+
+        /* --- Why Choose Us Section --- */
+        .features-section {
+            background-color: var(--light-beige);
+            text-align: center;
+            padding: 80px 20px;
+        }
+
+        .features-section h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+
+        .features-section p {
+            max-width: 700px;
+            margin: 0 auto 50px;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+        }
+
+        .feature-card {
+            background-color: var(--off-white);
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+        }
+
+        .feature-card .icon {
+            height: 40px;
+            margin-bottom: 15px;
+            content: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%232c2c2c"><path d="M12 11.5L9.5 9 12 6.5 14.5 9zM12 13L9.5 10.5 12 8l2.5 2.5z"/></svg>');
+        }
+        
+        .feature-card h3 {
+            font-size: 18px;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .feature-card p {
+            font-size: 14px;
+        }
+
+        /* --- NEET Resources Section --- */
+        .resources-section .hero h1 {
+            font-size: 40px;
+        }
+        
+        .resources-filter {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .filter-options {
+            display: flex;
+            align-items: center;
+        }
+        
+        .filter-options .icon {
+            height: 20px;
+            margin-right: 10px;
+            content: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%232c2c2c"><path d="M10 18h4v-2h-4v2zM3 6v2h18V6H3zm3 7h12v-2H6v2z"/></svg>');
+        }
+
+        .resource-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            padding: 40px 0;
+        }
+
+        .resource-card {
+            background-color: var(--off-white);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+            transition: transform 0.3s;
+        }
+
+        .resource-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .resource-card-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            background-color: #ddd; /* Placeholder color */
+        }
+        
+        .resource-card-image.img1 { background-image: url('https://via.placeholder.com/350x200?text=NEET+Mock+Exam'); }
+        .resource-card-image.img2 { background-image: url('https://via.placeholder.com/350x200?text=Physics+Handbook'); }
+        .resource-card-image.img3 { background-image: url('https://via.placeholder.com/350x200?text=Time+Management'); }
+        .resource-card-image.img4 { background-image: url('https://via.placeholder.com/350x200?text=MBBS+Abroad+Guide'); }
+        .resource-card-image.img5 { background-image: url('https://via.placeholder.com/350x200?text=NEET+Physics+Video'); }
+        .resource-card-image.img6 { background-image: url('https://via.placeholder.com/350x200?text=Biology+NCERT+Notes'); }
+        .resource-card-image.img7 { background-image: url('https://via.placeholder.com/350x200?text=Organic+Chemistry+Video'); }
+        .resource-card-image.img8 { background-image: url('https://via.placeholder.com/350x200?text=NEET+Biology+Notes'); }
+
+        .resource-card-content {
+            padding: 20px;
+        }
+        
+        .resource-card-tag {
+            background-color: var(--dark-green);
+            color: var(--light-beige);
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 12px;
+            display: inline-block;
+            margin-bottom: 10px;
+        }
+
+        .resource-card h3 {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .resource-card p {
+            font-size: 14px;
+            color: #555;
+            margin-bottom: 15px;
+        }
+
+        .resource-card-meta {
+            font-size: 12px;
+            color: #777;
+            margin-bottom: 20px;
+        }
+
+        .resource-card-button {
+            display: inline-block;
+            padding: 10px 15px;
+            border: 1px solid #ccc;
+            border-radius: 50px;
+            text-decoration: none;
+            color: var(--dark-green);
+            font-size: 14px;
+            transition: background-color 0.3s;
+        }
+
+        .resource-card-button:hover {
+            background-color: #eee;
+        }
+        
+        /* --- Footer --- */
+        .footer {
+            background-color: var(--dark-green);
+            color: var(--light-beige);
+            padding: 80px 0;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+        }
+
+        .footer-logo {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 24px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        
+        .footer-logo-img {
+            filter: invert(1);
+        }
+
+        .footer-about p {
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+        
+        .footer-about small {
+            font-size: 12px;
+            opacity: 0.7;
+        }
+
+        .footer h4 {
+            font-size: 18px;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        .footer ul {
+            list-style: none;
+        }
+
+        .footer ul li a {
+            color: var(--light-beige);
+            text-decoration: none;
+            font-size: 14px;
+            display: block;
+            margin-bottom: 10px;
+            opacity: 0.8;
+            transition: opacity 0.3s;
+        }
+
+        .footer ul li a:hover {
+            opacity: 1;
+        }
+
+        .contact-info {
+            font-size: 14px;
+        }
+        
+        .contact-info a {
+            color: var(--light-beige);
+            text-decoration: none;
+        }
+
+        /* --- Responsive Design --- */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 60px;
+                left: 0;
+                width: 100%;
+                background-color: var(--off-white);
+                padding: 20px 0;
+                border-top: 1px solid #ddd;
+                box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            }
+            
+            .nav-links.active {
+                display: flex;
+            }
+
+            .nav-links a {
+                padding: 10px 20px;
+                margin: 5px 0;
+                font-size: 16px;
+            }
+            
+            .nav-button {
+                display: none;
+            }
+
+            .menu-toggle {
+                display: block;
+            }
+
+            .hero h1 {
+                font-size: 36px;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <nav class="navbar">
+                <div class="logo">
+                    <img src="" alt="Astra Scholar Institute Logo" class="logo-img">
+                    ASTRA SCHOLAR INSTITUTE
+                </div>
+                <div class="nav-links">
+                    <a href="#home" class="nav-link" data-page="home"><span class="icon">&#x2302;</span>Home</a>
+                    <a href="#neet-prep" class="nav-link" data-page="neet-prep"><span class="icon">&#x1F4DA;</span>NEET Preparation</a>
+                    <a href="#mbbs-abroad" class="nav-link" data-page="mbbs-abroad"><span class="icon">&#x1F30E;</span>MBBS Abroad</a>
+                    <a href="#board-prep" class="nav-link" data-page="board-prep"><span class="icon">&#x270D;</span>Board Exam Prep</a>
+                    <a href="#mbbs-ebooks" class="nav-link" data-page="mbbs-ebooks"><span class="icon">&#x1F4D6;</span>MBBS Ebooks</a>
+                    <a href="#contact" class="nav-link" data-page="contact"><span class="icon">&#x1F4DE;</span>Contact</a>
+                </div>
+                <a href="#get-started" class="nav-button">Get Started</a>
+                <div class="menu-toggle">&#9776;</div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="home" class="content-section active">
+            <div class="hero">
+                <div class="container">
+                    <h1>Ready to Begin Your Medical Journey?</h1>
+                    <p>Get personalized guidance and support for your NEET preparation and MBBS abroad aspirations.</p>
+                    <a href="#" class="hero-button">Get Started Today &rarr;</a>
+                </div>
+            </div>
+
+            <div class="features-section">
+                <div class="container">
+                    <h2>Why Choose Our Platform?</h2>
+                    <p>We provide comprehensive support for your medical education journey, from NEET preparation to international MBBS programs.</p>
+                    <div class="feature-grid">
+                        <div class="feature-card">
+                            <img src="" alt="Icon" class="icon">
+                            <h3>Expert Study Materials</h3>
+                            <p>Comprehensive NEET preparation resources designed by medical education experts.</p>
+                        </div>
+                        <div class="feature-card">
+                            <img src="" alt="Icon" class="icon">
+                            <h3>Global Universities</h3>
+                            <p>Access information about top medical universities worldwide for MBBS programs.</p>
+                        </div>
+                        <div class="feature-card">
+                            <img src="" alt="Icon" class="icon">
+                            <h3>Personal Guidance</h3>
+                            <p>One-on-one counseling to help you make informed decisions about your medical career.</p>
+                        </div>
+                        <div class="feature-card">
+                            <img src="" alt="Icon" class="icon">
+                            <h3>Proven Success</h3>
+                            <p>Track record of helping students achieve their medical education goals.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="neet-prep" class="content-section">
+            <div class="hero resources-section">
+                <div class="container">
+                    <h1>NEET Preparation Resources</h1>
+                    <p>Comprehensive study materials, practice tests, and expert guidance to help you excel in the NEET exam.</p>
+                </div>
+            </div>
+            
+            <div class="container">
+                <div class="resources-filter">
+                    <div class="filter-options">
+                        <img src="" alt="Filter Icon" class="icon">
+                        <p>Filter by Type:</p>
+                    </div>
+                    <select id="resource-filter-select">
+                        <option value="all">All Resources</option>
+                        <option value="mock-exam">Mock Exam</option>
+                        <option value="study-material">Study Material</option>
+                        <option value="video-lecture">Video Lecture</option>
+                        <option value="ebook">E-book</option>
+                    </select>
+                </div>
+                
+                <div class="resource-grid">
+                    <div class="resource-card" data-tag="mock-exam">
+                        <div class="resource-card-image img1"></div>
+                        <div class="resource-card-content">
+                            <span class="resource-card-tag">Mock Exam</span>
+                            <h3>NEET Grand Test Series - Full Syllabus</h3>
+                            <p>A series of 5 full-syllabus grand tests designed to give a final push to your NEET preparation.</p>
+                            <div class="resource-card-meta">Published: Dec 01, 2024</div>
+                            <a href="#" class="resource-card-button">Access Resource &rarr;</a>
+                        </div>
+                    </div>
+                    <div class="resource-card" data-tag="study-material">
+                        <div class="resource-card-image img2"></div>
+                        <div class="resource-card-content">
+                            <span class="resource-card-tag">Study Material</span>
+                            <h3>Physics Formula Handbook for NEET</h3>
+                            <p>A concise handbook containing all essential formulas and constants required for NEET Physics.</p>
+                            <div class="resource-card-meta">Published: Jul 05, 2024</div>
+                            <a href="#" class="resource-card-button">Access Resource &rarr;</a>
+                        </div>
+                    </div>
+                     <div class="resource-card" data-tag="video-lecture">
+                        <div class="resource-card-image img5"></div>
+                        <div class="resource-card-content">
+                            <span class="resource-card-tag">Video Lecture</span>
+                            <h3>NEET Physics: Mechanics...</h3>
+                            <p>Comprehensive video lectures covering all essential topics in NEET Physics Mechanics, with solved examples and practice problems.</p>
+                            <div class="resource-card-meta">Published: Aug 15, 2024</div>
+                            <a href="#" class="resource-card-button">Access Resource &rarr;</a>
+                        </div>
+                    </div>
+                    <div class="resource-card" data-tag="study-material">
+                        <div class="resource-card-image img6"></div>
+                        <div class="resource-card-content">
+                            <span class="resource-card-tag">Study Material</span>
+                            <h3>Biology NCERT Notes: Class 11 & 12</h3>
+                            <p>Detailed, chapter-wise notes derived directly from NCERT textbooks for NEET Biology, covering both Class 11 and 12 syllabi.</p>
+                            <div class="resource-card-meta">Published: Sep 01, 2024</div>
+                            <a href="#" class="resource-card-button">Access Resource &rarr;</a>
+                        </div>
+                    </div>
+                    <div class="resource-card" data-tag="tip">
+                        <div class="resource-card-image img3"></div>
+                        <div class="resource-card-content">
+                            <span class="resource-card-tag">Tip</span>
+                            <h3>Time Management Strategies for NEET Exam</h3>
+                            <p>Expert tips and techniques to effectively manage your time during NEET preparation and the actual examination.</p>
+                            <div class="resource-card-meta">Published: Jun 25, 2024</div>
+                            <a href="#" class="resource-card-button">Access Resource &rarr;</a>
+                        </div>
+                    </div>
+                    <div class="resource-card" data-tag="video-lecture">
+                        <div class="resource-card-image img7"></div>
+                        <div class="resource-card-content">
+                            <span class="resource-card-tag">Video Lecture</span>
+                            <h3>Organic Chemistry Reaction Mechanis...</h3>
+                            <p>In-depth video series explaining complex organic reaction mechanisms with visual aids and examples.</p>
+                            <div class="resource-card-meta">Published: Aug 22, 2024</div>
+                            <a href="#" class="resource-card-button">Access Resource &rarr;</a>
+                        </div>
+                    </div>
+                    <div class="resource-card" data-tag="ebook">
+                        <div class="resource-card-image img4"></div>
+                        <div class="resource-card-content">
+                            <span class="resource-card-tag">E-book</span>
+                            <h3>MBBS Abroad: A Complete Guide for...</h3>
+                            <p>An e-book detailing the process, requirements, top countries, and universities for Indian students aspiring to study MBBS abroad.</p>
+                            <div class="resource-card-meta">Published: Nov 05, 2024</div>
+                            <a href="#" class="resource-card-button">Access Resource &rarr;</a>
+                        </div>
+                    </div>
+                     <div class="resource-card" data-tag="study-material">
+                        <div class="resource-card-image img8"></div>
+                        <div class="resource-card-content">
+                            <span class="resource-card-tag">Study Material</span>
+                            <h3>NEET Biology: Human Physiology...</h3>
+                            <p>Quick revision notes and flashcards for Human Physiology, crucial for NEET Biology section.</p>
+                            <div class="resource-card-meta">Published: Sep 18, 2024</div>
+                            <a href="#" class="resource-card-button">Access Resource &rarr;</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="mbbs-abroad" class="content-section">
+            <div class="hero">
+                <div class="container">
+                    <h1>MBBS Abroad: Your Global Medical Career Starts Here</h1>
+                    <p>Explore top universities, admission criteria, and scholarship opportunities for your MBBS abroad journey.</p>
+                    <a href="#" class="hero-button">Learn More &rarr;</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="board-prep" class="content-section">
+            <div class="hero">
+                <div class="container">
+                    <h1>Board Exam Prep: Master Your Syllabus</h1>
+                    <p>Comprehensive study guides, practice papers, and expert tips to help you excel in your board examinations.</p>
+                    <a href="#" class="hero-button">Start Preparing &rarr;</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="mbbs-ebooks" class="content-section">
+            <div class="hero">
+                <div class="container">
+                    <h1>MBBS Ebooks: Your Digital Library</h1>
+                    <p>Access a curated collection of e-books and study materials for every stage of your MBBS course.</p>
+                    <a href="#" class="hero-button">View Ebooks &rarr;</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="content-section">
+            <div class="hero">
+                <div class="container">
+                    <h1>Contact Us</h1>
+                    <p>Get in touch with our team for personalized guidance and support.</p>
+                    <a href="#" class="hero-button">Send a Message &rarr;</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container footer-grid">
+            <div class="footer-about">
+                <div class="footer-logo">
+                    <img src="" alt="Astra Scholar Institute Logo" class="logo-img footer-logo-img">
+                    ASTRA SCHOLAR INSTITUTE
+                </div>
+                <p>Empowering students to achieve their medical education dreams through expert NEET preparation and comprehensive MBBS abroad guidance.</p>
+                <small>© 2024 Astra Scholar Institute. All rights reserved.</small>
+            </div>
+            <div>
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#home" class="nav-link" data-page="home">Home</a></li>
+                    <li><a href="#neet-prep" class="nav-link" data-page="neet-prep">NEET Preparation</a></li>
+                    <li><a href="#mbbs-abroad" class="nav-link" data-page="mbbs-abroad">MBBS Abroad</a></li>
+                    <li><a href="#board-prep" class="nav-link" data-page="board-prep">Board Exam Prep</a></li>
+                    <li><a href="#mbbs-ebooks" class="nav-link" data-page="mbbs-ebooks">MBBS Ebooks</a></li>
+                    <li><a href="#contact" class="nav-link" data-page="contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="contact-info">
+                <h4>Contact</h4>
+                <p>Email: <a href="mailto:info@astrascholar.com">info@astrascholar.com</a></p>
+                <p>Phone: <a href="tel:+919994873274">+91 9994873274</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const navLinks = document.querySelectorAll('.nav-link');
+            const sections = document.querySelectorAll('.content-section');
+            const menuToggle = document.querySelector('.menu-toggle');
+            const navMenu = document.querySelector('.nav-links');
+
+            function showPage(pageId) {
+                sections.forEach(section => {
+                    section.classList.remove('active');
+                });
+                document.getElementById(pageId).classList.add('active');
+            }
+
+            navLinks.forEach(link => {
+                link.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const pageId = e.target.dataset.page;
+                    showPage(pageId);
+                    // Close mobile menu after clicking a link
+                    if (window.innerWidth <= 768) {
+                        navMenu.classList.remove('active');
+                    }
+                });
+            });
+
+            menuToggle.addEventListener('click', () => {
+                navMenu.classList.toggle('active');
+            });
+
+            // Initial page load
+            showPage('home');
+        });
+    </script>
+</body>
+</html>
