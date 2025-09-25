@@ -1,1 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NEET Preparation - Astra Scholar Institute</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <style>
+        /* CSS for the entire page */
+        :root {
+            --primary-green: #3D5A56;
+            --secondary-green: #5C7770;
+            --text-color: #333;
+            --white-text: #F8F7F3;
+            --light-bg: #EAE6DF;
+            --card-bg: #F8F7F3;
+            --font-serif: 'Playfair Display', serif;
+            --font-sans: 'Poppins', sans-serif;
+        }
 
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-sans);
+            color: var(--text-color);
+            line-height: 1.6;
+            background-color: var(--light-bg);
+        }
+        
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* --- Header/Navigation Bar (Same as previous page) --- */
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 5%;
+            background-color: var(--light-bg);
+            border-bottom: 1px solid #ccc;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo-container img {
+            height: 35px;
+        }
+        
+        .logo-container span {
+            font-family: var(--font-serif);
+            font-weight: 700;
+            font-size: 1.5em;
+            color: var(--primary-green);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+            align-items: center;
+        }
+
+        .nav-link a {
+            text-decoration: none;
+            color: var(--text-color);
+            font-weight: 500;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            transition: color 0.3s;
+        }
+        
+        .nav-link a.active, .nav-link a:hover {
+            color: var(--primary-green);
+        }
+
+        .nav-link a .icon {
+            font-size: 1.2em;
+            margin-bottom: 5px;
+        }
+        
+        .cta-button {
+            text-decoration: none;
+            background-color: var(--primary-green);
+            color: var(--white-text);
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-weight: 600;
+            transition: background-color 0.3s;
+        }
+
+        .cta-button:hover {
+            background-color: var(--secondary-green);
+        }
+        
+        /* --- Page Title Section --- */
+        .page-title {
+            padding: 20px 5%;
+            font-family: var(--font-serif);
+            font-size: 2em;
+            color: var(--primary-green);
+        }
+
+        /* --- Resource Grid --- */
+        .resource-grid {
+            padding: 20px 5%;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .resource-card {
+            background-color: var(--card-bg);
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            overflow: hidden;
+            transition: transform 0.3s ease-in-out;
+            border: 1px solid #ddd;
+        }
+        
+        .resource-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .resource-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        .resource-content {
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            height: calc(100% - 200px); /* Adjust height to fill space */
+        }
+        
+        .resource-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .resource-header h3 {
+            font-family: var(--font-serif);
+            font-size: 1.4em;
+            color: var(--primary-green);
+        }
+
+        .resource-type {
+            background-color: var(--primary-green);
+            color: var(--white-text);
+            padding: 5px 10px;
+            border-radius: 15px;
+            font-size: 0.8em;
+            font-weight: 600;
+        }
+        
+        .resource-description {
+            font-size: 0.9em;
+            color: #666;
+            margin-bottom: 15px;
+            flex-grow: 1; /* Pushes the button to the bottom */
+        }
+
+        .resource-meta {
+            font-size: 0.8em;
+            color: #999;
+            margin-bottom: 15px;
+        }
+        
+        .access-button {
+            display: inline-block;
+            text-align: center;
+            padding: 12px;
+            border: 1px solid var(--primary-green);
+            border-radius: 5px;
+            color: var(--primary-green);
+            font-weight: 600;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .access-button:hover {
+            background-color: var(--primary-green);
+            color: var(--white-text);
+        }
+        
+        /* --- CTA Section --- */
+        .contact-cta {
+            background-color: var(--secondary-green);
+            color: var(--white-text);
+            text-align: center;
+            padding: 80px 10%;
+            margin-top: 40px;
+        }
+
+        .contact-cta h2 {
+            font-family: var(--font-serif);
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        .contact-cta p {
+            font-size: 1.1em;
+            max-width: 600px;
+            margin: 0 auto 30px;
+        }
+
+        .contact-button {
+            text-decoration: none;
+            background-color: var(--white-text);
+            color: var(--primary-green);
+            padding: 15px 30px;
+            border-radius: 5px;
+            font-weight: 600;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .contact-button:hover {
+            background-color: #e0d8c8;
+        }
+        
+        /* --- Footer (Same as previous page) --- */
+        .footer {
+            background-color: var(--secondary-green);
+            color: var(--white-text);
+            padding: 50px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            gap: 40px;
+        }
+        
+        .footer-logo-section {
+            max-width: 400px;
+        }
+        
+        .footer-logo-section img {
+            height: 40px;
+        }
+        
+        .footer-logo-section p {
+            margin: 20px 0;
+        }
+        
+        .footer-links-section, .footer-contact-section {
+            flex-basis: 250px;
+        }
+        
+        .footer-links-section h3, .footer-contact-section h3 {
+            font-family: var(--font-serif);
+            font-size: 1.5em;
+            margin-bottom: 15px;
+        }
+        
+        .footer ul {
+            list-style: none;
+        }
+        
+        .footer ul a {
+            color: var(--white-text);
+            text-decoration: none;
+            display: block;
+            margin-bottom: 10px;
+            transition: color 0.3s;
+        }
+
+        .footer ul a:hover {
+            color: #ccc;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <a href="index.html" class="logo-container">
+            <img src="https://via.placeholder.com/50" alt="Astra Scholar Institute Logo">
+            <span>ASTRA SCHOLAR INSTITUTE</span>
+        </a>
+        <nav>
+            <ul class="nav-links">
+                <li class="nav-link"><a href="index.html"><span class="icon">&#x2302;</span>Home</a></li>
+                <li class="nav-link"><a href="neet-preparation.html" class="active"><span class="icon">&#x2696;</span>NEET Preparation</a></li>
+                <li class="nav-link"><a href="mbbs-abroad.html"><span class="icon">&#x2696;</span>MBBS Abroad</a></li>
+                <li class="nav-link"><a href="board-exam-prep.html"><span class="icon">&#x2696;</span>Board Exam Prep</a></li>
+                <li class="nav-link"><a href="mbbs-ebooks.html"><span class="icon">&#x1F4D6;</span>MBBS Ebooks</a></li>
+                <li class="nav-link"><a href="contact.html"><span class="icon">&#x260E;</span>Contact</a></li>
+            </ul>
+        </nav>
+        <a href="#" class="cta-button">Get Started</a>
+    </header>
+
+    <section class="page-title">
+        <h1>NEET Preparation</h1>
+    </section>
+
+    <section class="resource-grid">
+        <div class="resource-card">
+            <img src="https://via.placeholder.com/400x200" alt="Time Management Strategies" class="resource-image">
+            <div class="resource-content">
+                <div class="resource-header">
+                    <h3>Time Management Strategies for NEET Exam</h3>
+                    <span class="resource-type">Tip</span>
+                </div>
+                <p class="resource-description">Expert tips and techniques to effectively manage your time during NEET preparation and the actual examination.</p>
+                <p class="resource-meta">Published: Jun 25, 2024</p>
+                <a href="#" class="access-button">Access Resource &nbsp; &#x2197;</a>
+            </div>
+        </div>
+
+        <div class="resource-card">
+            <img src="https://via.placeholder.com/400x200" alt="MBBS Abroad Guide" class="resource-image">
+            <div class="resource-content">
+                <div class="resource-header">
+                    <h3>MBBS Abroad: A Complete Guide for...</h3>
+                    <span class="resource-type">E-Book</span>
+                </div>
+                <p class="resource-description">An e-book detailing the process, requirements, top countries, and universities for Indian students aspiring to study MBBS abroad.</p>
+                <p class="resource-meta">Published: Nov 05, 2024</p>
+                <a href="#" class="access-button">Access Resource &nbsp; &#x2197;</a>
+            </div>
+        </div>
+        
+        <div class="resource-card">
+            <img src="https://via.placeholder.com/400x200" alt="NEET Biology: Human Physiology" class="resource-image">
+            <div class="resource-content">
+                <div class="resource-header">
+                    <h3>NEET Biology: Human Physiology...</h3>
+                    <span class="resource-type">Study Material</span>
+                </div>
+                <p class="resource-description">Quick revision notes and flashcards for Human Physiology, crucial for NEET Biology section.</p>
+                <p class="resource-meta">Published: Sep 18, 2024</p>
+                <a href="#" class="access-button">Access Resource &nbsp; &#x2197;</a>
+            </div>
+        </div>
+
+        <div class="resource-card">
+            <img src="https://via.placeholder.com/400x200" alt="Organic Chemistry Video" class="resource-image">
+            <div class="resource-content">
+                <div class="resource-header">
+                    <h3>Organic Chemistry Reaction Mechanism...</h3>
+                    <span class="resource-type">Video Lecture</span>
+                </div>
+                <p class="resource-description">In-depth video series explaining complex organic reaction mechanisms with visual aids and examples.</p>
+                <p class="resource-meta">Published: Aug 22, 2024</p>
+                <a href="#" class="access-button">Access Resource &nbsp; &#x2197;</a>
+            </div>
+        </div>
+        
+        <div class="resource-card">
+            <img src="https://via.placeholder.com/400x200" alt="NEET Grand Test Series" class="resource-image">
+            <div class="resource-content">
+                <div class="resource-header">
+                    <h3>NEET Grand Test Series - Full Syllabus</h3>
+                    <span class="resource-type">Mock Exam</span>
+                </div>
+                <p class="resource-description">A series of 5 full-syllabus grand tests designed to give a final push to your NEET preparation.</p>
+                <p class="resource-meta">Published: Dec 01, 2024</p>
+                <a href="#" class="access-button">Access Resource &nbsp; &#x2197;</a>
+            </div>
+        </div>
+        
+        <div class="resource-card">
+            <img src="https://via.placeholder.com/400x200" alt="Physics Formulas Handbook" class="resource-image">
+            <div class="resource-content">
+                <div class="resource-header">
+                    <h3>Physics Formula Handbook for NEET</h3>
+                    <span class="resource-type">Study Material</span>
+                </div>
+                <p class="resource-description">A concise handbook containing all essential formulas and constants required for NEET Physics.</p>
+                <p class="resource-meta">Published: Jul 05, 2024</p>
+                <a href="#" class="access-button">Access Resource &nbsp; &#x2197;</a>
+            </div>
+        </div>
+        
+        <div class="resource-card">
+            <img src="https://via.placeholder.com/400x200" alt="NEET Chemistry Mock Test" class="resource-image">
+            <div class="resource-content">
+                <div class="resource-header">
+                    <h3>NEET Chemistry Mock Test Series 2025</h3>
+                    <span class="resource-type">Practice Test</span>
+                </div>
+                <p class="resource-description">Full-length mock tests for NEET Chemistry, designed to simulate the actual exam pattern and difficulty level.</p>
+                <p class="resource-meta">Published: Oct 20, 2024</p>
+                <a href="#" class="access-button">Access Resource &nbsp; &#x2197;</a>
+            </div>
+        </div>
+        
+        <div class="resource-card">
+            <img src="https://via.placeholder.com/400x200" alt="NEET Solved Papers" class="resource-image">
+            <div class="resource-content">
+                <div class="resource-header">
+                    <h3>Last 10 Years NEET Solved...</h3>
+                    <span class="resource-type">Previous Year Papers</span>
+                </div>
+                <p class="resource-description">Access to previous ten years' NEET question papers with fully explained solutions for all subjects.</p>
+                <p class="resource-meta">Published: Jul 10, 2024</p>
+                <a href="#" class="access-button">Access Resource &nbsp; &#x2197;</a>
+            </div>
+        </div>
+        
+    </section>
+
+    <section class="contact-cta">
+        <h2>Need Personalized Guidance?</h2>
+        <p>Get expert advice tailored to your NEET preparation needs and study abroad aspirations.</p>
+        <a href="#" class="contact-button">Contact Our Experts</a>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-logo-section">
+            <img src="https://via.placeholder.com/50" alt="Astra Scholar Institute Logo">
+            <p>Empowering students to achieve their medical education dreams through expert NEET preparation and comprehensive MBBS abroad guidance.</p>
+            <p>© 2024 Astra Scholar Institute. All rights reserved.</p>
+        </div>
+        <div class="footer-links-section">
+            <h3>Quick Links</h3>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">NEET Preparation</a></li>
+                <li><a href="#">MBBS Abroad</a></li>
+                <li><a href="#">Board Exam Prep</a></li>
+                <li><a href="#">MBBS Ebooks</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </div>
+        <div class="footer-contact-section">
+            <h3>Contact</h3>
+            <p>Email: info@astrascholar.com</p>
+            <p>Phone: +91 9994873274</p>
+        </div>
+    </footer>
+</body>
+</html>
