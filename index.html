@@ -3,92 +3,309 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Astra Scholar Institute - Home</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Astra Scholar Institute</title>
+    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            color: #1a1a1a;
+        }
+        .crimson-text {
+            font-family: 'Crimson Text', serif;
+        }
+        .custom-shadow {
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+    </style>
 </head>
-<body>
+<body class="bg-[#f0ece5]">
 
-    <header class="navbar">
-        <div class="logo">ASTRA SCHOLAR INSTITUTE</div>
-        <nav class="nav-links">
-            <a href="index.html">Home</a>
-            <a href="neet-prep.html">NEET Preparation</a>
-            <a href="#">MBBS Abroad</a>
-            <a href="board-exam.html">Board Exam Prep</a>
-            <a href="#">MBBS Ebooks</a>
-            <a href="contact.html">Contact</a>
-            <button class="get-started-btn">Get Started</button>
+    <!-- Navbar -->
+    <header class="bg-white custom-shadow">
+        <nav class="container mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between">
+            <!-- Logo and Site Name -->
+            <div class="flex items-center">
+                <div class="mr-2 text-2xl font-bold">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-8 h-8 text-[#5f6f52]">
+                        <path fill-rule="evenodd" d="M12.636 2.296a.75.75 0 01.103.858l-1.5 3a.75.75 0 01-1.175.148l-3-3.75a.75.75 0 01.919-1.217l2.164 1.637 1.34-2.68a.75.75 0 01.88-.204zM12.234 9.07a.75.75 0 01.782-.26l2.367.973a.75.75 0 01.272 1.137l-3.342 3.75a.75.75 0 01-1.011.086l-2.607-2.385a.75.75 0 01.95-.985l2.433 2.223 2.516-2.822zM8.342 16.899l-2.736-.912a.75.75 0 01-.19-.775l2.4-5.4a.75.75 0 011.16-.275l2.607 2.385a.75.75 0 01-.086 1.011l-3.342 3.75a.75.75 0 01-1.137-.272zM15.485 18.033a.75.75 0 01.07.728l-2.583 4.25a.75.75 0 01-1.226-.814l2.253-3.712a.75.75 0 011.486.548z" clip-rule="evenodd" />
+                    </svg>
+                </div>
+                <h1 class="text-xl sm:text-2xl font-bold text-[#333]">ASTRA SCHOLAR INSTITUTE</h1>
+            </div>
+
+            <!-- Main Menu (Desktop) -->
+            <div class="hidden md:flex items-center space-x-8 lg:space-x-12">
+                <a href="#" class="flex flex-col items-center group">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6 text-gray-500 group-hover:text-[#5f6f52] transition-colors">
+                        <path d="M11.47 3.84a.75.75 0 011.06 0l8.69 8.69a1.5 1.5 0 01.43 1.06V19.5a2.25 2.25 0 01-2.25 2.25H15a2.25 2.25 0 01-2.25-2.25V15a.75.75 0 00-.75-.75h-3a.75.75 0 00-.75.75v4.5a2.25 2.25 0 01-2.25 2.25H3.69a2.25 2.25 0 01-2.25-2.25V13.5a1.5 1.5 0 01.43-1.06l8.69-8.69z" />
+                    </svg>
+                    <span class="mt-1 text-sm font-medium text-gray-700 group-hover:text-[#5f6f52] transition-colors">Home</span>
+                </a>
+                <a href="#" class="flex flex-col items-center group">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6 text-gray-500 group-hover:text-[#5f6f52] transition-colors">
+                        <path fill-rule="evenodd" d="M3.75 6.75a3 3 0 013-3h10.5a3 3 0 013 3v.75H3.75v-.75zm.75 7.5a.75.75 0 01.75-.75h7.5a.75.75 0 010 1.5h-7.5a.75.75 0 01-.75-.75zM3 13.5h18v2.25c0 1.036-.84 1.875-1.875 1.875h-3.75a.75.75 0 010-1.5h3.75c.261 0 .47-.21.47-.47v-1.125h-10.5v1.125c0 .26.209.47.47.47h3.75a.75.75 0 010 1.5H5.25a1.875 1.875 0 01-1.875-1.875V13.5zm7.5 3a.75.75 0 010 1.5H5.25a.75.75 0 010-1.5h5.25zm5.25-3a.75.75 0 01.75.75v3a.75.75 0 01-1.5 0v-3a.75.75 0 01.75-.75zm.75-6a.75.75 0 01.75.75v.75a.75.75 0 01-1.5 0V8.25a.75.75 0 01.75-.75z" clip-rule="evenodd" />
+                    </svg>
+                    <span class="mt-1 text-sm font-medium text-gray-700 group-hover:text-[#5f6f52] transition-colors">NEET Preparation</span>
+                </a>
+                <a href="#" class="flex flex-col items-center group">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6 text-gray-500 group-hover:text-[#5f6f52] transition-colors">
+                        <path d="M12.75 12.75a.75.75 0 11-1.5 0 .75.75 0 011.5 0zM12.75 15.75a.75.75 0 11-1.5 0 .75.75 0 011.5 0zM12.75 18.75a.75.75 0 11-1.5 0 .75.75 0 011.5 0z" />
+                        <path fill-rule="evenodd" d="M18.665 1.25c.306 0 .584.148.775.388L22.5 4.75l-2.45 2.94a.75.75 0 01-1.235-.615c.34-.33.722-.596 1.144-.799l.795-1.332L17.75 3l-1.92 1.399a.75.75 0 01-1.077-.116 33.753 33.753 0 00-.733-1.066L12 1.5l-.234-.146a.75.75 0 00-.916.143L8.5 3.5l-1.92 1.399a.75.75 0 01-1.077-.116c-.328-.453-.611-.88-.857-1.26l-1.282-1.923a.75.75 0 011.07-1.07l1.923 1.282c.38.246.744.51 1.066.733a.75.75 0 01.116 1.077L6.5 6.25l-.973 2.367a.75.75 0 01-1.137-.272l-3.342-3.75a.75.75 0 01.272-1.137l3.75-3.342a.75.75 0 011.137.272l.973 2.367 1.332-.795c.49-.292.937-.53 1.346-.725l1.09-1.815a.75.75 0 01.77-.388zM12 21a9 9 0 100-18 9 9 0 000 18z" clip-rule="evenodd" />
+                    </svg>
+                    <span class="mt-1 text-sm font-medium text-gray-700 group-hover:text-[#5f6f52] transition-colors">MBBS Abroad</span>
+                </a>
+                <a href="#" class="flex flex-col items-center group">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6 text-gray-500 group-hover:text-[#5f6f52] transition-colors">
+                        <path d="M12.75 1.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zM12.75 4.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zM12.75 7.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0z" />
+                        <path fill-rule="evenodd" d="M18.665 1.25c.306 0 .584.148.775.388L22.5 4.75l-2.45 2.94a.75.75 0 01-1.235-.615c.34-.33.722-.596 1.144-.799l.795-1.332L17.75 3l-1.92 1.399a.75.75 0 01-1.077-.116 33.753 33.753 0 00-.733-1.066L12 1.5l-.234-.146a.75.75 0 00-.916.143L8.5 3.5l-1.92 1.399a.75.75 0 01-1.077-.116c-.328-.453-.611-.88-.857-1.26l-1.282-1.923a.75.75 0 011.07-1.07l1.923 1.282c.38.246.744.51 1.066.733a.75.75 0 01.116 1.077L6.5 6.25l-.973 2.367a.75.75 0 01-1.137-.272l-3.342-3.75a.75.75 0 01.272-1.137l3.75-3.342a.75.75 0 011.137.272l.973 2.367 1.332-.795c.49-.292.937-.53 1.346-.725l1.09-1.815a.75.75 0 01.77-.388zM12 21a9 9 0 100-18 9 9 0 000 18z" clip-rule="evenodd" />
+                    </svg>
+                    <span class="mt-1 text-sm font-medium text-gray-700 group-hover:text-[#5f6f52] transition-colors">Board Exam Prep</span>
+                </a>
+                <a href="#" class="flex flex-col items-center group">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6 text-gray-500 group-hover:text-[#5f6f52] transition-colors">
+                        <path d="M6 3a3 3 0 00-3 3v1.5a.75.75 0 001.5 0V6a1.5 1.5 0 011.5-1.5h1.5a.75.75 0 000-1.5H6zM7.5 3.75a.75.75 0 000 1.5h.75a.75.75 0 000-1.5H7.5zM3 18a3 3 0 003 3h1.5a.75.75 0 000-1.5H6a1.5 1.5 0 01-1.5-1.5V18a.75.75 0 00-1.5 0v1.5zm16.5 0a.75.75 0 00-1.5 0V18a1.5 1.5 0 01-1.5 1.5h-1.5a.75.75 0 000 1.5h1.5a3 3 0 003-3V18zM18 3a3 3 0 00-3 3v1.5a.75.75 0 001.5 0V6a1.5 1.5 0 011.5-1.5h1.5a.75.75 0 000-1.5H18z" />
+                    </svg>
+                    <span class="mt-1 text-sm font-medium text-gray-700 group-hover:text-[#5f6f52] transition-colors">MBBS Ebooks</span>
+                </a>
+                <a href="#" class="flex flex-col items-center group">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6 text-gray-500 group-hover:text-[#5f6f52] transition-colors">
+                        <path fill-rule="evenodd" d="M1.5 4.5a3 3 0 013-3h8.757a3 3 0 012.247.886l4.993 4.993a3 3 0 01.886 2.247V21a3 3 0 01-3 3h-8.25a3 3 0 01-3-3V4.5zM12 12.75a.75.75 0 01.75-.75h2.25a.75.75 0 010 1.5h-2.25a.75.75 0 01-.75-.75zM12 15.75a.75.75 0 01.75-.75h2.25a.75.75 0 010 1.5h-2.25a.75.75 0 01-.75-.75zM14.25 18.75a.75.75 0 000 1.5h2.25a.75.75 0 000-1.5h-2.25z" clip-rule="evenodd" />
+                    </svg>
+                    <span class="mt-1 text-sm font-medium text-gray-700 group-hover:text-[#5f6f52] transition-colors">Contact</span>
+                </a>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <div class="md:hidden flex items-center">
+                <button id="mobile-menu-btn" class="p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-gray-700">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Get Started Button -->
+            <a href="#" class="hidden md:block bg-[#5f6f52] text-white py-2 px-6 rounded-md font-semibold hover:bg-[#4a553e] transition-colors">Get Started</a>
         </nav>
     </header>
 
-    <main>
-        <section class="main-services-section">
-            <div class="service-content">
-                <h1>Board Exam, NEET & MBBS Abroad</h1>
-                <h2 class="italic-text">Excellence Starts Here</h2>
-                <p>Excel in board exams, master the NEET exam with expert guidance, and explore world-class MBBS programs abroad. Your journey to academic excellence begins with the right preparation.</p>
-                <div class="service-buttons">
-                    <a href="#" class="service-btn">Start NEET Prep →</a>
-                    <a href="#" class="service-btn">Board Exam Prep</a>
-                    <a href="#" class="service-btn">MBBS Abroad</a>
+    <!-- Mobile Menu (Hidden by default) -->
+    <div id="mobile-menu" class="hidden md:hidden bg-white custom-shadow">
+        <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+            <a href="#" class="flex items-center space-x-2 text-gray-700 hover:bg-gray-100 hover:text-[#5f6f52] rounded-md px-3 py-2 font-medium">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5">
+                    <path d="M11.47 3.84a.75.75 0 011.06 0l8.69 8.69a1.5 1.5 0 01.43 1.06V19.5a2.25 2.25 0 01-2.25 2.25H15a2.25 2.25 0 01-2.25-2.25V15a.75.75 0 00-.75-.75h-3a.75.75 0 00-.75.75v4.5a2.25 2.25 0 01-2.25 2.25H3.69a2.25 2.25 0 01-2.25-2.25V13.5a1.5 1.5 0 01.43-1.06l8.69-8.69z" />
+                </svg>
+                <span>Home</span>
+            </a>
+            <a href="#" class="flex items-center space-x-2 text-gray-700 hover:bg-gray-100 hover:text-[#5f6f52] rounded-md px-3 py-2 font-medium">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5">
+                    <path fill-rule="evenodd" d="M3.75 6.75a3 3 0 013-3h10.5a3 3 0 013 3v.75H3.75v-.75zm.75 7.5a.75.75 0 01.75-.75h7.5a.75.75 0 010 1.5h-7.5a.75.75 0 01-.75-.75zM3 13.5h18v2.25c0 1.036-.84 1.875-1.875 1.875h-3.75a.75.75 0 010-1.5h3.75c.261 0 .47-.21.47-.47v-1.125h-10.5v1.125c0 .26.209.47.47.47h3.75a.75.75 0 010 1.5H5.25a1.875 1.875 0 01-1.875-1.875V13.5zm7.5 3a.75.75 0 010 1.5H5.25a.75.75 0 010-1.5h5.25zm5.25-3a.75.75 0 01.75.75v3a.75.75 0 01-1.5 0v-3a.75.75 0 01.75-.75zM16.5 7.5a.75.75 0 000 1.5h.75a.75.75 0 000-1.5h-.75z" clip-rule="evenodd" />
+                </svg>
+                <span>NEET Preparation</span>
+            </a>
+            <a href="#" class="flex items-center space-x-2 text-gray-700 hover:bg-gray-100 hover:text-[#5f6f52] rounded-md px-3 py-2 font-medium">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5">
+                    <path d="M12.75 12.75a.75.75 0 11-1.5 0 .75.75 0 011.5 0zM12.75 15.75a.75.75 0 11-1.5 0 .75.75 0 011.5 0zM12.75 18.75a.75.75 0 11-1.5 0 .75.75 0 011.5 0z" />
+                    <path fill-rule="evenodd" d="M18.665 1.25c.306 0 .584.148.775.388L22.5 4.75l-2.45 2.94a.75.75 0 01-1.235-.615c.34-.33.722-.596 1.144-.799l.795-1.332L17.75 3l-1.92 1.399a.75.75 0 01-1.077-.116 33.753 33.753 0 00-.733-1.066L12 1.5l-.234-.146a.75.75 0 00-.916.143L8.5 3.5l-1.92 1.399a.75.75 0 01-1.077-.116c-.328-.453-.611-.88-.857-1.26l-1.282-1.923a.75.75 0 011.07-1.07l1.923 1.282c.38.246.744.51 1.066.733a.75.75 0 01.116 1.077L6.5 6.25l-.973 2.367a.75.75 0 01-1.137-.272l-3.342-3.75a.75.75 0 01.272-1.137l3.75-3.342a.75.75 0 011.137.272l.973 2.367 1.332-.795c.49-.292.937-.53 1.346-.725l1.09-1.815a.75.75 0 01.77-.388zM12 21a9 9 0 100-18 9 9 0 000 18z" clip-rule="evenodd" />
+                </svg>
+                <span>MBBS Abroad</span>
+            </a>
+            <a href="#" class="flex items-center space-x-2 text-gray-700 hover:bg-gray-100 hover:text-[#5f6f52] rounded-md px-3 py-2 font-medium">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5">
+                    <path d="M12.75 1.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zM12.75 4.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zM12.75 7.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0z" />
+                    <path fill-rule="evenodd" d="M18.665 1.25c.306 0 .584.148.775.388L22.5 4.75l-2.45 2.94a.75.75 0 01-1.235-.615c.34-.33.722-.596 1.144-.799l.795-1.332L17.75 3l-1.92 1.399a.75.75 0 01-1.077-.116 33.753 33.753 0 00-.733-1.066L12 1.5l-.234-.146a.75.75 0 00-.916.143L8.5 3.5l-1.92 1.399a.75.75 0 01-1.077-.116c-.328-.453-.611-.88-.857-1.26l-1.282-1.923a.75.75 0 011.07-1.07l1.923 1.282c.38.246.744.51 1.066.733a.75.75 0 01.116 1.077L6.5 6.25l-.973 2.367a.75.75 0 01-1.137-.272l-3.342-3.75a.75.75 0 01.272-1.137l3.75-3.342a.75.75 0 011.137.272l.973 2.367 1.332-.795c.49-.292.937-.53 1.346-.725l1.09-1.815a.75.75 0 01.77-.388zM12 21a9 9 0 100-18 9 9 0 000 18z" clip-rule="evenodd" />
+                </svg>
+                <span>Board Exam Prep</span>
+            </a>
+            <a href="#" class="flex items-center space-x-2 text-gray-700 hover:bg-gray-100 hover:text-[#5f6f52] rounded-md px-3 py-2 font-medium">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5">
+                    <path d="M6 3a3 3 0 00-3 3v1.5a.75.75 0 001.5 0V6a1.5 1.5 0 011.5-1.5h1.5a.75.75 0 000-1.5H6zM7.5 3.75a.75.75 0 000 1.5h.75a.75.75 0 000-1.5H7.5zM3 18a3 3 0 003 3h1.5a.75.75 0 000-1.5H6a1.5 1.5 0 01-1.5-1.5V18a.75.75 0 00-1.5 0v1.5zm16.5 0a.75.75 0 00-1.5 0V18a1.5 1.5 0 01-1.5 1.5h-1.5a.75.75 0 000 1.5h1.5a3 3 0 003-3V18zM18 3a3 3 0 00-3 3v1.5a.75.75 0 001.5 0V6a1.5 1.5 0 011.5-1.5h1.5a.75.75 0 000-1.5H18z" />
+                </svg>
+                <span>MBBS Ebooks</span>
+            </a>
+            <a href="#" class="flex items-center space-x-2 text-gray-700 hover:bg-gray-100 hover:text-[#5f6f52] rounded-md px-3 py-2 font-medium">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5">
+                    <path fill-rule="evenodd" d="M1.5 4.5a3 3 0 013-3h8.757a3 3 0 012.247.886l4.993 4.993a3 3 0 01.886 2.247V21a3 3 0 01-3 3h-8.25a3 3 0 01-3-3V4.5zM12 12.75a.75.75 0 01.75-.75h2.25a.75.75 0 010 1.5h-2.25a.75.75 0 01-.75-.75zM12 15.75a.75.75 0 01.75-.75h2.25a.75.75 0 010 1.5h-2.25a.75.75 0 01-.75-.75zM14.25 18.75a.75.75 0 000 1.5h2.25a.75.75 0 000-1.5h-2.25z" clip-rule="evenodd" />
+                </svg>
+                <span>Contact</span>
+            </a>
+        </div>
+        <div class="px-5 pt-4 pb-3">
+            <a href="#" class="block w-full text-center bg-[#5f6f52] text-white py-2 px-6 rounded-md font-semibold hover:bg-[#4a553e] transition-colors">Get Started</a>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="relative h-[80vh] flex items-center justify-center bg-[#5f6f52] text-white px-4 sm:px-6">
+        <div class="text-center max-w-4xl">
+            <h2 class="text-4xl sm:text-5xl md:text-6xl font-bold leading-tight crimson-text mb-4">
+                Board Exam, NEET & MBBS Abroad
+            </h2>
+            <h3 class="text-3xl sm:text-4xl italic font-normal crimson-text mb-8">
+                Excellence Starts Here
+            </h3>
+            <p class="text-base sm:text-lg mb-8 max-w-2xl mx-auto">
+                Excel in board exams, master the NEET exam with expert guidance, and explore world-class MBBS programs abroad. Your journey to academic excellence begins with the right preparation.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
+                <a href="#" class="bg-transparent border border-white text-white py-3 px-6 rounded-md font-semibold flex items-center justify-center hover:bg-white hover:text-[#5f6f52] transition-colors">
+                    Start NEET Prep
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-4 h-4 ml-2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3" />
+                    </svg>
+                </a>
+                <a href="#" class="bg-transparent border border-white text-white py-3 px-6 rounded-md font-semibold hover:bg-white hover:text-[#5f6f52] transition-colors">
+                    Board Exam Prep
+                </a>
+                <a href="#" class="bg-transparent border border-white text-white py-3 px-6 rounded-md font-semibold hover:bg-white hover:text-[#5f6f52] transition-colors">
+                    MBBS Abroad
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section class="bg-[#f0ece5] py-20 px-4 sm:px-6">
+        <div class="container mx-auto text-center">
+            <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold crimson-text mb-4 text-[#333]">
+                Why Choose Our Platform?
+            </h2>
+            <p class="text-base sm:text-lg max-w-3xl mx-auto text-gray-700 mb-12">
+                We provide comprehensive support for your medical education journey, from NEET preparation to international MBBS programs.
+            </p>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Feature 1 -->
+                <div class="bg-white p-6 rounded-md custom-shadow flex flex-col items-center text-center">
+                    <div class="bg-[#5f6f52] text-white rounded-full p-3 mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-8 h-8">
+                            <path fill-rule="evenodd" d="M3.75 6.75a3 3 0 013-3h10.5a3 3 0 013 3v6a3 3 0 01-3 3H9.75a3 3 0 00-3 3v1.5a.75.75 0 01-1.5 0V18a3 3 0 00-3-3v-6zm9.25-3a1.5 1.5 0 00-1.5 1.5v7.5a.75.75 0 01-1.5 0V5.25a.75.75 0 00-.75-.75h-.75a.75.75 0 000 1.5h.75v7.5a2.25 2.25 0 002.25 2.25h1.5a.75.75 0 000-1.5h-1.5a.75.75 0 01-.75-.75V6.75a.75.75 0 00-.75-.75z" clip-rule="evenodd" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-[#333] mb-2">Expert Study Materials</h3>
+                    <p class="text-sm text-gray-600">
+                        Comprehensive NEET preparation resources designed by medical education experts.
+                    </p>
+                </div>
+
+                <!-- Feature 2 -->
+                <div class="bg-white p-6 rounded-md custom-shadow flex flex-col items-center text-center">
+                    <div class="bg-[#5f6f52] text-white rounded-full p-3 mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-8 h-8">
+                            <path d="M12.75 12.75a.75.75 0 11-1.5 0 .75.75 0 011.5 0zM12.75 15.75a.75.75 0 11-1.5 0 .75.75 0 011.5 0zM12.75 18.75a.75.75 0 11-1.5 0 .75.75 0 011.5 0z" />
+                            <path fill-rule="evenodd" d="M18.665 1.25c.306 0 .584.148.775.388L22.5 4.75l-2.45 2.94a.75.75 0 01-1.235-.615c.34-.33.722-.596 1.144-.799l.795-1.332L17.75 3l-1.92 1.399a.75.75 0 01-1.077-.116 33.753 33.753 0 00-.733-1.066L12 1.5l-.234-.146a.75.75 0 00-.916.143L8.5 3.5l-1.92 1.399a.75.75 0 01-1.077-.116c-.328-.453-.611-.88-.857-1.26l-1.282-1.923a.75.75 0 011.07-1.07l1.923 1.282c.38.246.744.51 1.066.733a.75.75 0 01.116 1.077L6.5 6.25l-.973 2.367a.75.75 0 01-1.137-.272l-3.342-3.75a.75.75 0 01.272-1.137l3.75-3.342a.75.75 0 011.137.272l.973 2.367 1.332-.795c.49-.292.937-.53 1.346-.725l1.09-1.815a.75.75 0 01.77-.388zM12 21a9 9 0 100-18 9 9 0 000 18z" clip-rule="evenodd" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-[#333] mb-2">Global Universities</h3>
+                    <p class="text-sm text-gray-600">
+                        Access information about top medical universities worldwide for MBBS programs.
+                    </p>
+                </div>
+
+                <!-- Feature 3 -->
+                <div class="bg-white p-6 rounded-md custom-shadow flex flex-col items-center text-center">
+                    <div class="bg-[#5f6f52] text-white rounded-full p-3 mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-8 h-8">
+                            <path d="M7.5 7.5a.75.75 0 000 1.5h6a.75.75 0 000-1.5h-6z" />
+                            <path fill-rule="evenodd" d="M3 4.5A2.25 2.25 0 015.25 2.25h13.5A2.25 2.25 0 0121 4.5v15a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 19.5v-15zm9-1.5a.75.75 0 00-1.5 0V3h1.5v-.75zm-3 0a.75.75 0 00-1.5 0V3h1.5v-.75zM9 3h6v1.5a.75.75 0 001.5 0V3h2.25c.381 0 .75.161 1 .42l1.25.75c.25.15.25.55 0 .7L20 6.25c-.25.15-.5.25-.75.25H18v1.5a.75.75 0 00-1.5 0V6.5H7.5v1.5a.75.75 0 00-1.5 0V6.5H5.25c-.25 0-.5-.1-.75-.25L3.5 5.5c-.25-.15-.25-.55 0-.7L4.25 4.75c.25-.15.5-.25.75-.25H6V3.75a.75.75 0 00-1.5 0V3h1.5v-.75z" clip-rule="evenodd" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-[#333] mb-2">Personal Guidance</h3>
+                    <p class="text-sm text-gray-600">
+                        One-on-one counseling to help you make informed decisions about your medical career.
+                    </p>
+                </div>
+
+                <!-- Feature 4 -->
+                <div class="bg-white p-6 rounded-md custom-shadow flex flex-col items-center text-center">
+                    <div class="bg-[#5f6f52] text-white rounded-full p-3 mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-8 h-8">
+                            <path fill-rule="evenodd" d="M12 2.25a.75.75 0 01.75.75v6.59l2.5-2.5a.75.75 0 011.06 1.06l-3.75 3.75a.75.75 0 01-1.06 0l-3.75-3.75a.75.75 0 111.06-1.06l2.5 2.5V3a.75.75 0 01.75-.75zM6 18a3 3 0 013-3h6a3 3 0 013 3v2.25a.75.75 0 01-1.5 0V18a1.5 1.5 0 00-1.5-1.5H9A1.5 1.5 0 007.5 18v2.25a.75.75 0 01-1.5 0V18zM18 10.5a.75.75 0 01.75.75v4.5a.75.75 0 01-1.5 0v-4.5a.75.75 0 01.75-.75zM6 10.5a.75.75 0 01.75.75v4.5a.75.75 0 01-1.5 0v-4.5a.75.75 0 01.75-.75z" clip-rule="evenodd" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-[#333] mb-2">Proven Success</h3>
+                    <p class="text-sm text-gray-600">
+                        Track record of helping students achieve their medical education goals.
+                    </p>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <section class="why-choose-section">
-            <h2>Why Choose Our Platform?</h2>
-            <p>We provide comprehensive support for your medical education journey, from NEET preparation to international MBBS programs.</p>
-            <div class="features-grid">
-                <div class="feature-box">
-                    <div class="icon-circle">📚</div>
-                    <h3>Expert Study Materials</h3>
-                    <p>Comprehensive NEET preparation resources designed by medical education experts.</p>
+    <!-- Mid Section -->
+    <section class="bg-[#5f6f52] text-white py-20 px-4 sm:px-6">
+        <div class="container mx-auto text-center max-w-2xl">
+            <h2 class="text-4xl sm:text-5xl md:text-6xl font-bold leading-tight crimson-text mb-4">
+                Ready to Begin Your Medical Journey?
+            </h2>
+            <p class="text-base sm:text-lg mb-8">
+                Get personalized guidance and support for your NEET preparation and MBBS abroad aspirations.
+            </p>
+            <a href="#" class="inline-flex items-center bg-white text-[#5f6f52] py-3 px-8 rounded-md font-semibold hover:bg-gray-200 transition-colors">
+                Get Started Today
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-4 h-4 ml-2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3" />
+                </svg>
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-gray-300 py-12 px-4 sm:px-6">
+        <div class="container mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-left">
+            <!-- Footer Section 1: About -->
+            <div class="flex flex-col items-center md:items-start">
+                <div class="flex items-center mb-4">
+                    <div class="mr-2 text-2xl font-bold">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-8 h-8 text-white">
+                            <path fill-rule="evenodd" d="M12.636 2.296a.75.75 0 01.103.858l-1.5 3a.75.75 0 01-1.175.148l-3-3.75a.75.75 0 01.919-1.217l2.164 1.637 1.34-2.68a.75.75 0 01.88-.204zM12.234 9.07a.75.75 0 01.782-.26l2.367.973a.75.75 0 01.272 1.137l-3.342 3.75a.75.75 0 01-1.011.086l-2.607-2.385a.75.75 0 01.95-.985l2.433 2.223 2.516-2.822zM8.342 16.899l-2.736-.912a.75.75 0 01-.19-.775l2.4-5.4a.75.75 0 011.16-.275l2.607 2.385a.75.75 0 01-.086 1.011l-3.342 3.75a.75.75 0 01-1.137-.272zM15.485 18.033a.75.75 0 01.07.728l-2.583 4.25a.75.75 0 01-1.226-.814l2.253-3.712a.75.75 0 011.486.548z" clip-rule="evenodd" />
+                        </svg>
+                    </div>
+                    <h4 class="text-xl font-bold text-white">ASTRA SCHOLAR INSTITUTE</h4>
                 </div>
-                <div class="feature-box">
-                    <div class="icon-circle">🎓</div>
-                    <h3>Global Universities</h3>
-                    <p>Access information about top medical universities worldwide for MBBS programs.</p>
-                </div>
-                <div class="feature-box">
-                    <div class="icon-circle">🧑‍🏫</div>
-                    <h3>Personal Guidance</h3>
-                    <p>One-on-one counseling to help you make informed decisions about your medical career.</p>
-                </div>
-                <div class="feature-box">
-                    <div class="icon-circle">🏆</div>
-                    <h3>Proven Success</h3>
-                    <p>Track record of helping students achieve their medical education goals.</p>
-                </div>
+                <p class="text-sm mb-4">
+                    Empowering students to achieve their medical education dreams through expert NEET preparation and comprehensive MBBS abroad guidance.
+                </p>
+                <p class="text-xs text-gray-500">
+                    &copy; 2024 Astra Scholar Institute. All rights reserved.
+                </p>
             </div>
-        </section>
-    </main>
 
-    <footer class="footer">
-        <div class="footer-content">
-            <div class="footer-logo">ASTRA SCHOLAR INSTITUTE</div>
-            <p>Empowering students to achieve their medical education dreams through expert NEET preparation and comprehensive MBBS abroad guidance.</p>
-            <p>© 2024 Astra Scholar Institute. All rights reserved.</p>
-        </div>
-        <div class="footer-links">
-            <h3>Quick Links</h3>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="neet-prep.html">NEET Preparation</a></li>
-                <li><a href="#">MBBS Abroad</a></li>
-                <li><a href="board-exam.html">Board Exam Prep</a></li>
-                <li><a href="#">MBBS Ebooks</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </div>
-        <div class="footer-contact">
-            <h3>Contact</h3>
-            <p>Email: astroscholarinstitute@gmail.com</p>
-            <p>Phone: +91 9994873274</p>
+            <!-- Footer Section 2: Quick Links -->
+            <div class="text-center md:text-left">
+                <h4 class="text-lg font-semibold text-white mb-4">Quick Links</h4>
+                <ul class="space-y-2 text-sm">
+                    <li><a href="#" class="hover:text-white transition-colors">Home</a></li>
+                    <li><a href="#" class="hover:text-white transition-colors">NEET Preparation</a></li>
+                    <li><a href="#" class="hover:text-white transition-colors">MBBS Abroad</a></li>
+                    <li><a href="#" class="hover:text-white transition-colors">Board Exam Prep</a></li>
+                    <li><a href="#" class="hover:text-white transition-colors">MBBS Ebooks</a></li>
+                    <li><a href="#" class="hover:text-white transition-colors">Contact</a></li>
+                </ul>
+            </div>
+
+            <!-- Footer Section 3: Contact -->
+            <div class="text-center md:text-left">
+                <h4 class="text-lg font-semibold text-white mb-4">Contact</h4>
+                <ul class="space-y-2 text-sm">
+                    <li>Email: <a href="mailto:info@astrascholar.com" class="hover:text-white transition-colors">info@astrascholar.com</a></li>
+                    <li>Phone: +91 9994873274</li>
+                </ul>
+            </div>
         </div>
     </footer>
+
+    <script>
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
 
 </body>
 </html>
