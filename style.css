@@ -34,6 +34,18 @@
                 <h1>Ready to Begin Your Medical Journey?</h1>
                 <p>Get personalized guidance and support for your NEET preparation and MBBS abroad aspirations.</p>
                 <a href="#" class="cta-button">Get Started Today <i class="fas fa-arrow-right"></i></a>
+/* Styling for the logo within the sidebar */
+.sidebar .logo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.sidebar .logo img {
+    height: 60px; /* Adjust this value */
+    margin-bottom: 10px;
+}
             </div>
         </section>
 
